@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-for letter in range(97, 123)
-if chr(letter) is not 'q' and chr(letter is not 'e'):
+# 2-print_alphabet.py
+
+"""Print the alphabet in reverse in lowercase, not followed by a new line."""
+for letter in range(97, 123):
     print("{}".format(chr(letter)), end="")
