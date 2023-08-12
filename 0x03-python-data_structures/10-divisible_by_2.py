@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # 10-divisible_by_2.py
 
-def invisible_by_2(my_list=[]):
+def divisible_by_2(my_list=[]):
     """Find all multiples of 2 in list."""
     multiples = []
     for i in range(len(my_list)):
