@@ -25,7 +25,8 @@ class Rectangle(Base):
             y (int): The y-coordinate of the rectangle.
 
         Calls the constructor of the Base class, using `id`.
-        Assigns the provided `width`, `height`, `x`, and `y` values to the corresponding attributes.
+        Assigns the provided `width`, `height`, `x`, and `y`
+        values to the corresponding attributes.
         """
         super().__init__(id)
         self.width = width
@@ -88,3 +89,12 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """ Calculate and return the area of the rectangle. """
+        return self.__width*self.__height
+
+    def display(self):
+        """ Display the Rectangle instance with '#' characters. """
+        for i in range(self.__height):
+            print("#" * self.__width)
