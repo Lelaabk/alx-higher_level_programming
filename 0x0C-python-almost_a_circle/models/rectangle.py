@@ -96,5 +96,32 @@ class Rectangle(Base):
 
     def display(self):
         """ Display the Rectangle instance with '#' characters. """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
+
+    def update(self, *args, **kwargs):
+        """ Assign arguments or key-value arguments to attributes. """
+        if args:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Return a dictionary representation of the Rectangle instance. """
+        return{
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y}
+
+    def __str__(self):
+        """ Return a string representation of the Rectangle instance. """
+        return"[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
