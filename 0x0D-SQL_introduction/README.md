@@ -27,6 +27,9 @@ Welcome to the SQL Introduction project! In this project, you will delve into th
     - [Task 14: Average](#task-14-average)
     - [Task 15: Number by Score](#task-15-number-by-score)
     - [Task 16: Say My Name](#task-16-say-my-name)
+    - [Task 18: Temperatures #0](#task-18-temperatures-0)
+    - [Task 19: Temperatures #1](#task-19-temperatures-1)
+    - [Task 20: Temperatures #2](#task-20-temperatures-2)
 
 ## Concepts
 - **Databases**: Understanding the basics of databases.
@@ -177,7 +180,7 @@ $ cat 101-avg_temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 $ cat 102-top_city.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 ```
 
-###Task 20: Temperatures #2
+### Task 20: Temperatures #2
 ```bash
 $ cat 103-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 ```
