@@ -1,0 +1,9 @@
+#!/usr/bin/node
+
+const args = proccess.argv.slice(2);
+if (args.length === 0)
+	console.log('No argumet');
+else if (args.length === 1)
+	console.log('Argument found');
+else
+	console.log('Arguments found');
