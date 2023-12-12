@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const f = require('f');
+const f = require('fs');
 if (process.argv.length !== 5) {
   console.error('Usage: ./102-concat.js file1 file2 destFile');
   process.exit(1);
