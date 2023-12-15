@@ -16,7 +16,7 @@ if __name__ == "__main__":
                          passwd=password, db=db_name, charset="utf8")
     cs = db.cursor()
 
-    query = ("SELECT * FROM states WHERE name = %s", (match, ))
+    query = ("SELECT * FROM states WHERE name = %s".format(match))
     cs.execute(query)
     rows = cs.fetchall()
     for row in rows:
