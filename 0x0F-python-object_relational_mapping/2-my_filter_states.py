@@ -16,7 +16,7 @@ if __name__ == "__main__":
                          passwd=password, db=db_name, charset="utf8")
     cs = db.cursor()
 
-    query = ("SELECT * FROM states WHERE name = '{}'"
+    query = ("SELECT * FROM states WHERE name LIKE BINARY '{}'"
              "ORDER BY id ASC".format(search_state))
     cs.execute(query)
     rows = cs.fetchall()
@@ -24,4 +24,4 @@ if __name__ == "__main__":
         print(row)
 
     cs.close()
-    db.close(
+    db.close()
