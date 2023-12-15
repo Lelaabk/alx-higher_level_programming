@@ -10,18 +10,13 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    if len(sys.argv[4]) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
-        sys.exit(1)
-
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=db_name, charset="utf8")
     cs = db.cursor()
 
-    query = """SELECT cities.id, cities.name, states.name
+    cs.execute("""SELECT cities.id, cities.name, states.name
                FROM cities
-               INNER JOIN states ON cities.states_id = states.id"""
-    cs.execute(query)
+               INNER JOIN states ON states.id=cities.state_id""")
     rows = cs.fetchall()
     for row in rows:
         print(row)
