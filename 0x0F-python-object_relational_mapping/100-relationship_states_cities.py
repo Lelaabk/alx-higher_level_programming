@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     state_jdida.cities.append(city_jdida)
     session.add(state_jdida)
-    awssion.add(city_jdida)
+    session.add(city_jdida)
     session.commit()
 
     session.close()
