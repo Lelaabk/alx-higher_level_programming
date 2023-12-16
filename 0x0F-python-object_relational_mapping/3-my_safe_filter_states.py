@@ -2,22 +2,18 @@
 """ Script that takes argument and displays all values in states table of
 database hbtn_0e_0_usa where name matches argument. _safe_ """
 
-
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
-    match = sys.argv[4]
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,
-                         passwd=password, db=db_name, charset="utf8")
     cs = db.cursor()
+    match = sys.argv[4]
+    cs.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
 
-    query = ("SELECT * FROM states WHERE name = %s".format(match))
-    cs.execute(query)
     rows = cs.fetchall()
     for row in rows:
         print(row)
