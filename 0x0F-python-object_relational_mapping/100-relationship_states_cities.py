@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Creates State "California" with city "San Fransico". """
+""" Creates State "California" with city "San Francisco". """
 
 
 import sys
@@ -17,8 +17,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="California", cities=[City(name="San Francisco")])
-    session.add(new_state)
-    session.commi()
+    state_jdida = State(name='California')
+    city_jdida = City(name='San Francisco')
+    state_jdida.cities.append(city_jdida)
+    session.add(state_jdida)
+    awssion.add(city_jdida)
+    session.commit()
 
     session.close()
