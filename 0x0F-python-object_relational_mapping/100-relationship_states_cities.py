@@ -19,6 +19,7 @@ if __name__ == "__main__":
 
     state_jdida = State(name='California')
     city_jdida = City(name='San Francisco')
+
     state_jdida.cities.append(city_jdida)
     session.add(state_jdida)
     awssion.add(city_jdida)
