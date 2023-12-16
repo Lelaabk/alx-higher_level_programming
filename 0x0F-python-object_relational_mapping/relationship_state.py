@@ -4,6 +4,9 @@ import sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, Metadata
 from sqlalchemy.ext.declarative import declarative_base
 
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
+
 
 class State(Base):
     """Class definition of a State."""
